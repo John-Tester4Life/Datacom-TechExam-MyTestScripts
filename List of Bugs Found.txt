@@ -1,0 +1,20 @@
+Bugs Found:
+First Name label is not marked as mandatory
+Last Name text box element is named as "Last Name* Phone nunber*"
+Phone number label is misspelled as "Phone nunber"
+Password text field reminder is "psw length validation" instead of "Password length validation"
+Checkbox for user agreement with the terms and conditions is not clickable
+Register Button - After User registration, the system doesn't save the last letter of Last Name field value
+Register Button - After User registration, the system adds 1 to the last digit
+Register Button - After User registration, Country field value is displayed as "Phillipines" instead of "Philippines"
+Register Button - User registration is marked as successful even if mandatory field Last Name is blank
+Register Button - User registration is marked as successful even if mandatory field Email address field is blank
+Register Button - User registration is marked as successful even if Email address field values doesn't end in "@<websitename>.com"
+Register Button - User registration is unsuccessful even if Password field value is equal to 20 characters
+Register Button - User can still complete the registration even if the agreement checkbox is not checked.
+Register Button - Successful User Registration stores "Select a country..." value if user didn't select any country in the dropdown
+
+Nice to Have:
+Note for Mandatory Fields should be displayed at the top of all text fields instead of under the Last Name field.
+Note for Password length validation - Should be "between 6 to 20 characters" instead of "[6,20] characters"
+Warning Message for password - Should be "The password should contain between 6 to 20 characters" instead of "The password should contain between [6,20] characters!"
