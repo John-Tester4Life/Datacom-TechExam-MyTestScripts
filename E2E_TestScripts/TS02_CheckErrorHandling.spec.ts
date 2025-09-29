@@ -5,6 +5,7 @@ test('TC02 Check Error Handling of User Registration if blank or incorrect value
   await test.step('Step 1 - Open "CHALLENGE - Spot the BUGS!" Page', async () => 
      { 
         await page.goto('https://qa-practice.netlify.app/bugs-form');
+        await page.waitForTimeout(2000);
         await page.evaluate(() => document.body.style.zoom = '0.6');
         await page.screenshot({  path: 'screenshots/TS02_Step1-PageIsLoaded.png' })
      });

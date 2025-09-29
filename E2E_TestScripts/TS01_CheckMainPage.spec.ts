@@ -5,6 +5,7 @@ test('TC01 Check All Objects in Main Page', async ({ page }) => {
   await test.step('Step 1 - Open "CHALLENGE - Spot the BUGS!" Page', async () => 
      { 
         await page.goto('https://qa-practice.netlify.app/bugs-form');
+        await page.waitForTimeout(2000);
         await page.evaluate(() => document.body.style.zoom = '0.6');
         await page.screenshot({ path: 'screenshots/TC01_Step1-PageContents.png' })
      });
@@ -23,22 +24,18 @@ test('TC01 Check All Objects in Main Page', async ({ page }) => {
      { 
         test.setTimeout(60000);
         //Check First Name field
-<<<<<<< HEAD
             await expect.soft(page.getByText('First Name*'), {message: 'Check First Name label is visible and mandatory'}).toBeVisible({timeout: 500});
-=======
-            await expect.soft(page.getByText('First Name*'), {message: 'Check First Name label is visible and mandatory'}).toBeVisible();
->>>>>>> 5c256cc3466a44dbcc9da1e634869c44191ff9f7
             await expect.soft(page.getByRole('textbox', { name: 'First Name' }), {message: 'Check First Name text box is visible'}).toBeVisible();
             await expect.soft(page.getByRole('textbox', { name: 'First Name' }), {message: 'Check First Name text box is enabled'}).toBeEnabled();
 
         //Check Last Name field
             await expect.soft(page.getByText('Last Name*'), {message: 'Last Name label is visible and mandatory'}).toBeVisible();
-            await expect.soft(page.getByRole('textbox', { name: 'Enter last name' }), {message: 'Check Last Name text box is visible'}).toBeVisible();
-            await expect.soft(page.getByRole('textbox', { name: 'Enter last name' }), {message: 'Check Last Name text box is enabled'}).toBeEnabled();
-            await expect.soft(page.getByText('Note: All the fields marked with * are mandatory'), {message: 'Check reminder for mandatory fields is visible and correct'}).toBeVisible();
+            await expect.soft(page.getByRole('textbox', { name: 'Enter last name' }), {message: 'Check Last Name text box is visible'}).toBeVisible({timeout: 500});
+            await expect.soft(page.getByRole('textbox', { name: 'Enter last name' }), {message: 'Check Last Name text box is enabled'}).toBeEnabled({timeout: 500});
+            await expect.soft(page.getByText('Note: All the fields marked with * are mandatory'), {message: 'Check reminder for mandatory fields is visible and correct'}).toBeVisible({timeout: 500});
 
         //Check Phone Number field
-            await expect.soft(page.getByText('Phone number*'), {message: 'Check Phone label is visible'}).toBeVisible();
+            await expect.soft(page.getByText('Phone number*'), {message: 'Check Phone label is visible'}).toBeVisible({timeout: 500});
             await expect.soft(page.getByRole('textbox', { name: 'Enter phone number' }), {message: 'Check Phone text box is visible'}).toBeVisible();
             await expect.soft(page.getByRole('textbox', { name: 'Enter phone number' }), {message: 'Check Phone text box is enabled'}).toBeEnabled();
 
@@ -55,13 +52,13 @@ test('TC01 Check All Objects in Main Page', async ({ page }) => {
 
         //Check Password field
             await expect.soft(page.getByText('Password*'), {message: 'Check Password label is visible amd mandatory'}).toBeVisible();
-            await expect.soft(page.getByRole('textbox', { name: 'Enter password' }), {message: 'Check Password text box is visible'}).toBeVisible();
-            await expect.soft(page.getByRole('textbox', { name: 'Enter password' }), {message: 'Check Password text box is enabled'}).toBeEnabled();
+            await expect.soft(page.getByRole('textbox', { name: 'Enter password' }), {message: 'Check Password text box is visible'}).toBeVisible({timeout: 500});
+            await expect.soft(page.getByRole('textbox', { name: 'Enter password' }), {message: 'Check Password text box is enabled'}).toBeEnabled({timeout: 500});
             await expect.soft(page.getByText('Password length validation: [6,20] characters'), {message: 'Check Reminder for Password validation is visible and correct'}).toBeVisible();
 
         //Check Checkbox for user agreement
             await expect.soft(page.getByText('I agree with the terms and conditions'), {message: 'Check User Agreement check box is visible'}).toBeVisible();
-            await expect.soft(page.getByText('I agree with the terms and conditions'), {message: 'Check User Agreement check box is enabled'}).toBeEnabled();
+            await expect.soft(page.getByText('I agree with the terms and conditions'), {message: 'Check User Agreement check box is enabled'}).toBeEnabled({timeout: 500});
      });
 
      await test.step('Step 4 - Check all buttons', async () => 
