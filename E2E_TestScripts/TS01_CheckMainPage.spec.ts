@@ -23,7 +23,11 @@ test('TC01 Check All Objects in Main Page', async ({ page }) => {
      { 
         test.setTimeout(60000);
         //Check First Name field
+<<<<<<< HEAD
             await expect.soft(page.getByText('First Name*'), {message: 'Check First Name label is visible and mandatory'}).toBeVisible({timeout: 500});
+=======
+            await expect.soft(page.getByText('First Name*'), {message: 'Check First Name label is visible and mandatory'}).toBeVisible();
+>>>>>>> 5c256cc3466a44dbcc9da1e634869c44191ff9f7
             await expect.soft(page.getByRole('textbox', { name: 'First Name' }), {message: 'Check First Name text box is visible'}).toBeVisible();
             await expect.soft(page.getByRole('textbox', { name: 'First Name' }), {message: 'Check First Name text box is enabled'}).toBeEnabled();
 

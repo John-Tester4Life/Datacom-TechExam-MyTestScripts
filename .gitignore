@@ -1,9 +1,14 @@
 
 # Playwright
 node_modules/
+<<<<<<< HEAD
 /test-results/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
 /playwright/.auth/
 /screenshots
+=======
+/blob-report/
+/playwright/.cache/
+>>>>>>> 5c256cc3466a44dbcc9da1e634869c44191ff9f7
